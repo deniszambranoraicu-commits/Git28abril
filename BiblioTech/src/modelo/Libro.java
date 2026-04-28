@@ -1,4 +1,4 @@
-package com.bibliotech;
+package modelo;
 
 import java.io.Serializable;
 
@@ -9,10 +9,10 @@ import java.io.Serializable;
  */
 public class Libro implements Serializable {
 
-	public String isbn;
-	public String titulo;
-	public String autor;
-	public boolean prestado;
+	String isbn;
+	private String titulo;
+	private String autor;
+	private boolean prestado;
 
 	public Libro(String isbn, String titulo, String autor) {
 		this.isbn = isbn;
@@ -32,5 +32,37 @@ public class Libro implements Serializable {
 	@Override
 	public String toString() {
 		return String.format("%-13s | %-30s | %-20s | %s", isbn, titulo, autor, prestado ? "Prestado" : "Disponible");
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public boolean isPrestado() {
+		return prestado;
+	}
+
+	public void setPrestado(boolean prestado) {
+		this.prestado = prestado;
 	}
 }
